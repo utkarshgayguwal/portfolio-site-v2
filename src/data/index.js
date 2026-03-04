@@ -23,6 +23,7 @@ export const PROJECTS = [
     num: '01',
     title: 'Smile — Enterprise Audit System',
     meta: 'US-based Enterprise Platform · 2025–Present',
+    // url: 'https://...',   ← add url here to make it clickable
     tags: [
       { label: 'Laravel',      accent: true },
       { label: 'Audit Logs',   accent: false },
@@ -33,6 +34,7 @@ export const PROJECTS = [
     num: '02',
     title: 'SBI Payments — Banking Platform',
     meta: 'FinTech / Banking · 2025',
+    url: 'https://www.sbipayments.com/',
     tags: [
       { label: 'Laravel 12', accent: true  },
       { label: 'RBAC',       accent: false },

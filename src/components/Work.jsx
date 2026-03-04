@@ -12,19 +12,22 @@ function WorkItem({ project }) {
   const onEnter = () => gsap.to(titleRef.current, { x: 6,  duration: 0.25, ease: 'power2.out' })
   const onLeave = () => gsap.to(titleRef.current, { x: 0, duration: 0.25, ease: 'power2.out' })
 
-  return (
-    <div
-      className="work-item-accent relative grid grid-cols-[80px_1fr_auto] items-center gap-8 px-10 py-8 border-b border-white/[0.08] last:border-b-0 transition-colors duration-200 hover:bg-[#111111] cursor-none"
-      onMouseEnter={onEnter}
-      onMouseLeave={onLeave}
-    >
+  const isClickable = !!project.url
+
+  const inner = (
+    <>
       <span className="font-mono text-[0.72rem] text-[#a09a90] tracking-[0.1em]">
         {project.num}
       </span>
 
       <div>
-        <div ref={titleRef} className="text-[1.25rem] font-bold mb-1">
+        <div ref={titleRef} className="text-[1.25rem] font-bold mb-1 flex items-center gap-2">
           {project.title}
+          {isClickable && (
+            <span className="text-[#e8734a] text-[0.85rem] opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              ↗
+            </span>
+          )}
         </div>
         <div className="font-mono text-[0.72rem] text-[#a09a90] tracking-[0.06em]">
           {project.meta}
@@ -46,6 +49,33 @@ function WorkItem({ project }) {
           </span>
         ))}
       </div>
+    </>
+  )
+
+  const sharedClass = [
+    'group work-item-accent relative grid grid-cols-[80px_1fr_auto] items-center gap-8 px-10 py-8',
+    'border-b border-white/[0.08] last:border-b-0 transition-colors duration-200 hover:bg-[#111111]',
+    isClickable ? 'cursor-pointer' : 'cursor-none',
+  ].join(' ')
+
+  if (isClickable) {
+    return (
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noreferrer"
+        className={sharedClass + ' no-underline text-[#f0ece4]'}
+        onMouseEnter={onEnter}
+        onMouseLeave={onLeave}
+      >
+        {inner}
+      </a>
+    )
+  }
+
+  return (
+    <div className={sharedClass} onMouseEnter={onEnter} onMouseLeave={onLeave}>
+      {inner}
     </div>
   )
 }
