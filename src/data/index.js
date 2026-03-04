@@ -45,42 +45,43 @@ export const PROJECTS = [
     num: '03',
     title: 'DNS Bank — Web Platform',
     meta: 'Banking · 2024',
+    url: 'https://dns.bank.in/',
     tags: [
       { label: 'Laravel', accent: true  },
       { label: 'PHP',     accent: false },
       { label: 'MySQL',   accent: false },
     ],
   },
-  {
-    num: '04',
-    title: 'BMC — FaceBio, CSMVS Museum & Zoo',
-    meta: 'Government / Public Sector · 2025',
-    tags: [
-      { label: 'Laravel',    accent: true  },
-      { label: 'GovTech',    accent: false },
-      { label: 'Compliance', accent: false },
-    ],
-  },
-  {
-    num: '05',
-    title: 'Access Health — Healthcare Platform',
-    meta: 'US Healthcare · 2024',
-    tags: [
-      { label: 'Laravel',    accent: true  },
-      { label: 'REST API',   accent: false },
-      { label: 'PostgreSQL', accent: false },
-    ],
-  },
-  {
-    num: '06',
-    title: 'Made Easy Meals — Food Platform',
-    meta: 'US-based Platform · 2024',
-    tags: [
-      { label: 'Laravel',   accent: true  },
-      { label: 'Easebuzz',  accent: false },
-      { label: 'Webhooks',  accent: false },
-    ],
-  },
+  // {
+  //   num: '04',
+  //   title: 'BMC — FaceBio, CSMVS Museum & Zoo',
+  //   meta: 'Government / Public Sector · 2025',
+  //   tags: [
+  //     { label: 'Laravel',    accent: true  },
+  //     { label: 'GovTech',    accent: false },
+  //     { label: 'Compliance', accent: false },
+  //   ],
+  // },
+  // {
+  //   num: '05',
+  //   title: 'Access Health — Healthcare Platform',
+  //   meta: 'US Healthcare · 2024',
+  //   tags: [
+  //     { label: 'Laravel',    accent: true  },
+  //     { label: 'REST API',   accent: false },
+  //     { label: 'PostgreSQL', accent: false },
+  //   ],
+  // },
+  // {
+  //   num: '06',
+  //   title: 'Made Easy Meals — Food Platform',
+  //   meta: 'US-based Platform · 2024',
+  //   tags: [
+  //     { label: 'Laravel',   accent: true  },
+  //     { label: 'Easebuzz',  accent: false },
+  //     { label: 'Webhooks',  accent: false },
+  //   ],
+  // },
 ]
 
 export const SKILL_GROUPS = [
@@ -97,17 +98,17 @@ export const SKILL_GROUPS = [
     title: 'Database & DevOps',
     skills: [
       { name: 'MySQL',               pct: 88 },
-      { name: 'PostgreSQL',          pct: 80 },
+      // { name: 'PostgreSQL',          pct: 80 },
       { name: 'MSSQL',               pct: 75 },
-      { name: 'Git / GitHub / GitLab', pct: 90 },
+      { name: 'Git / GitHub / GitLab / BitBucket', pct: 90 },
     ],
   },
   {
     title: 'Frontend',
     skills: [
+      { name: 'React ',     pct: 85 },
       { name: 'JavaScript / jQuery', pct: 78 },
       { name: 'HTML5 / CSS3',        pct: 82 },
-      { name: 'React (Learning)',     pct: 55 },
     ],
   },
   {
@@ -149,7 +150,7 @@ export const TIMELINE = [
 ]
 
 export const CONTACT_DETAILS = [
-  { label: 'Email',    value: 'utkarshgayguwal@gmail.com', href: 'mailto:utkarshgayguwal@gmail.com' },
+  { label: 'Email',    value: 'utkarshgayguwal123@gmail.com', href: 'mailto:utkarshgayguwal123@gmail.com' },
   { label: 'Location', value: 'Mumbai, Maharashtra',       href: null },
   { label: 'GitHub',   value: '/utkarshgayguwal',          href: 'https://github.com/utkarshgayguwal' },
   { label: 'LinkedIn', value: '/in/utkarsh-gayguwal',      href: 'https://linkedin.com/in/utkarsh-gayguwal' },
