@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Syne', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-serif: 'Instrument Serif', serif;
+
+  --color-bg:      #0a0a0a;
+  --color-bg2:     #111111;
+  --color-bg3:     #161616;
+  --color-fg:      #f0ece4;
+  --color-fg2:     #a09a90;
+  --color-accent:  #e8734a;
+  --color-accent2: #c9562f;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  color: #f0ece4;
+  font-family: 'Syne', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── Cursor ── */
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: #e8734a;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid #e8734a;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s, height 0.25s, opacity 0.2s;
+  opacity: 0.5;
+}
+.cursor-ring.hovered  { width: 56px; height: 56px; opacity: 0.3; }
+.cursor.hovered       { width: 20px; height: 20px; }
+
+/* ── Blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.blink { animation: blink 0.9s step-end infinite; }
+
+/* ── Scroll line ── */
+@keyframes scrollLine {
+  0%, 100% { transform: scaleY(1);   opacity: 1; }
+  50%       { transform: scaleY(0.5); opacity: 0.4; }
+}
+.scroll-line { animation: scrollLine 1.5s ease-in-out infinite; }
+
+/* ── Ticker ── */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-animate { animation: ticker 28s linear infinite; }
+
+/* ── Text stroke (outline letters) ── */
+.text-outline {
+  -webkit-text-stroke: 1.5px #a09a90;
+  color: transparent;
+}
+
+/* ── Noise overlay ── */
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+/* ── Skill bar transition ── */
+.skill-bar-fill {
+  transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Work item left accent ── */
+.work-item-accent::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 0;
+  background: #e8734a;
+  transition: width 0.3s ease;
+}
+.work-item-accent:hover::before {
+  width: 3px;
+}
+
+/* ── Shared buttons ── */
+.btn-primary {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background: #e8734a;
+  color: #fff;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover {
+  background: #c9562f;
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background: transparent;
+  color: #f0ece4;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(240,236,228,0.14);
+  cursor: none;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.btn-ghost:hover {
+  border-color: #a09a90;
+  transform: translateY(-2px);
+}
