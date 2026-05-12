@@ -54,7 +54,7 @@ export const PROJECTS = [
   },
   {
     num: '04',
-    title: 'Techcean — News & Media Platform',
+    title: 'Techcean',
     meta: 'React / Vercel · 2026',
     url: 'http://techcean-brown.vercel.app/',
     tags: [
