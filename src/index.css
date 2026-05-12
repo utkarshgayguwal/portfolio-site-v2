@@ -28,6 +28,19 @@ body {
   cursor: none;
 }
 
+@media (max-width: 1024px) {
+  body {
+    cursor: auto !important;
+  }
+  .cursor, .cursor-ring {
+    display: none !important;
+  }
+}
+
+.container-padding {
+  @apply px-6 md:px-12 lg:px-24;
+}
+
 /* ── Cursor ── */
 .cursor {
   position: fixed;

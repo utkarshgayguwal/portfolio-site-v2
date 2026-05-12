@@ -16,12 +16,12 @@ function WorkItem({ project }) {
 
   const inner = (
     <>
-      <span className="font-mono text-[0.72rem] text-[#a09a90] tracking-[0.1em]">
+      <span className="font-mono text-[0.65rem] md:text-[0.72rem] text-[#a09a90] tracking-[0.1em] mb-2 md:mb-0">
         {project.num}
       </span>
 
       <div>
-        <div ref={titleRef} className="text-[1.25rem] font-bold mb-1 flex items-center gap-2">
+        <div ref={titleRef} className="text-[1.15rem] md:text-[1.25rem] font-bold mb-1 flex items-center gap-2">
           {project.title}
           {isClickable && (
             <span className="text-[#e8734a] text-[0.85rem] opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -29,17 +29,17 @@ function WorkItem({ project }) {
             </span>
           )}
         </div>
-        <div className="font-mono text-[0.72rem] text-[#a09a90] tracking-[0.06em]">
+        <div className="font-mono text-[0.65rem] md:text-[0.72rem] text-[#a09a90] tracking-[0.06em]">
           {project.meta}
         </div>
       </div>
 
-      <div className="flex gap-2 flex-wrap justify-end max-md:hidden">
+      <div className="flex gap-2 flex-wrap md:justify-end mt-4 md:mt-0">
         {project.tags.map(tag => (
           <span
             key={tag.label}
             className={[
-              'font-mono text-[0.65rem] tracking-[0.08em] uppercase px-3 py-1 border',
+              'font-mono text-[0.6rem] md:text-[0.65rem] tracking-[0.08em] uppercase px-3 py-1 border',
               tag.accent
                 ? 'border-[#e8734a] text-[#e8734a]'
                 : 'border-white/[0.14] text-[#a09a90]',
@@ -53,7 +53,7 @@ function WorkItem({ project }) {
   )
 
   const sharedClass = [
-    'group work-item-accent relative grid grid-cols-[80px_1fr_auto] items-center gap-8 px-10 py-8',
+    'group work-item-accent relative flex flex-col md:grid md:grid-cols-[80px_1fr_auto] items-start md:items-center gap-2 md:gap-8 px-6 md:px-10 py-8',
     'border-b border-white/[0.08] last:border-b-0 transition-colors duration-200 hover:bg-[#111111]',
     isClickable ? 'cursor-pointer' : 'cursor-none',
   ].join(' ')
@@ -98,7 +98,7 @@ export default function Work() {
   }, [])
 
   return (
-    <section id="work" className="py-28 px-12 bg-[#0a0a0a]">
+    <section id="work" className="py-20 md:py-28 px-6 md:px-12 bg-[#0a0a0a]">
       <div ref={labelRef} className="section-label font-mono text-[0.72rem] tracking-[0.22em] uppercase text-[#e8734a] mb-5 flex items-center gap-3">
         <span className="inline-block w-5 h-px bg-[#e8734a]" />
         Selected Work
@@ -106,8 +106,8 @@ export default function Work() {
 
       <div
         ref={titleRef}
-        className="font-extrabold uppercase tracking-tight mb-16"
-        style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 0.95 }}
+        className="font-extrabold uppercase tracking-tight mb-12 md:mb-16"
+        style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', lineHeight: 0.95 }}
       >
         PROJECTS
       </div>

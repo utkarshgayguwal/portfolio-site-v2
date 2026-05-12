@@ -9,7 +9,7 @@ export default function About() {
   const timelineRef = useStaggerReveal({ opacity: 0, x: 20, duration: 0.6 }, { start: 'top 80%' })
 
   return (
-    <section id="about" className="py-28 px-12 bg-[#0a0a0a]">
+    <section id="about" className="py-20 md:py-28 px-6 md:px-12 bg-[#0a0a0a]">
       <div ref={labelRef} className="font-mono text-[0.72rem] tracking-[0.22em] uppercase text-[#e8734a] mb-5 flex items-center gap-3">
         <span className="inline-block w-5 h-px bg-[#e8734a]" />
         About
@@ -17,13 +17,13 @@ export default function About() {
 
       <div
         ref={titleRef}
-        className="font-extrabold uppercase tracking-tight mb-16"
-        style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 0.95 }}
+        className="font-extrabold uppercase tracking-tight mb-12 md:mb-16"
+        style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', lineHeight: 0.95 }}
       >
         ME
       </div>
 
-      <div className="grid grid-cols-2 gap-24 items-start max-md:grid-cols-1 max-md:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
         {/* Left — bio */}
         <div ref={textRef}>
           {[
@@ -32,13 +32,15 @@ export default function About() {
             <>Beyond client work, I actively <strong className="text-[#f0ece4] not-italic font-sans">build and publish Laravel packages</strong> on Packagist — because good tools make developers faster. Currently expanding into <strong className="text-[#f0ece4] not-italic font-sans">full-stack development with React</strong> to bridge the gap between backend and frontend.</>,
             <>I value work that is <em>secure, scalable, and boring in the best possible way</em>.</>,
           ].map((p, i) => (
-            <p key={i} className="font-serif italic text-[#a09a90] text-[1.1rem] leading-[1.75] mb-6">{p}</p>
+            <p key={i} className="font-serif italic text-[#a09a90] text-[1.05rem] md:text-[1.1rem] leading-[1.75] mb-6">{p}</p>
           ))}
 
-          <div className="flex gap-4 mt-8">
-            <a href="mailto:utkarshgayguwal@gmail.com" className="btn-primary">Email Me</a>
-            <a href="https://github.com/utkarshgayguwal" target="_blank" rel="noreferrer" className="btn-ghost">GitHub ↗</a>
-            <a href="https://linkedin.com/in/utkarsh-gayguwal" target="_blank" rel="noreferrer" className="btn-ghost">LinkedIn ↗</a>
+          <div className="flex flex-wrap gap-4 mt-8">
+            <a href="mailto:utkarshgayguwal@gmail.com" className="btn-primary w-full sm:w-auto text-center">Email Me</a>
+            <div className="flex gap-4 w-full sm:w-auto">
+              <a href="https://github.com/utkarshgayguwal" target="_blank" rel="noreferrer" className="btn-ghost flex-1 sm:flex-none text-center">GitHub ↗</a>
+              <a href="https://linkedin.com/in/utkarsh-gayguwal" target="_blank" rel="noreferrer" className="btn-ghost flex-1 sm:flex-none text-center">LinkedIn ↗</a>
+            </div>
           </div>
         </div>
 
@@ -48,18 +50,18 @@ export default function About() {
             {TIMELINE.map((item, i) => (
               <div
                 key={i}
-                className="grid gap-6 py-6 border-b border-white/[0.08] first:pt-0"
-                style={{ gridTemplateColumns: '100px 1fr' }}
+                className="grid gap-4 md:gap-6 py-6 border-b border-white/[0.08] first:pt-0"
+                style={{ gridTemplateColumns: 'minmax(80px, 100px) 1fr' }}
               >
-                <div className="font-mono text-[0.72rem] tracking-[0.1em] text-[#a09a90] pt-1">
+                <div className="font-mono text-[0.65rem] md:text-[0.72rem] tracking-[0.1em] text-[#a09a90] pt-1">
                   {item.period}
                 </div>
                 <div>
-                  <div className="text-[1rem] font-bold mb-1">{item.title}</div>
-                  <div className="font-mono text-[0.72rem] text-[#e8734a] tracking-[0.08em] mb-2">
+                  <div className="text-[0.95rem] md:text-[1rem] font-bold mb-1">{item.title}</div>
+                  <div className="font-mono text-[0.65rem] md:text-[0.72rem] text-[#e8734a] tracking-[0.08em] mb-2">
                     {item.company}
                   </div>
-                  <div className="text-[0.85rem] text-[#a09a90] leading-relaxed">{item.desc}</div>
+                  <div className="text-[0.8rem] md:text-[0.85rem] text-[#a09a90] leading-relaxed">{item.desc}</div>
                 </div>
               </div>
             ))}

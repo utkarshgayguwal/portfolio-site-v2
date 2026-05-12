@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer
       ref={ref}
-      className="px-12 py-8 border-t border-white/[0.08] bg-[#0a0a0a] flex justify-between items-center max-md:flex-col max-md:gap-4 max-md:text-center"
+      className="px-6 md:px-12 py-8 border-t border-white/[0.08] bg-[#0a0a0a] flex justify-between items-center max-md:flex-col max-md:gap-4 max-md:text-center"
     >
       <div className="font-mono text-[0.72rem] text-[#a09a90] tracking-[0.08em]">
         © 2026 UTKARSH GAYGUWAL — LARAVEL BACKEND DEVELOPER

@@ -56,7 +56,7 @@ export default function Skills() {
   }, [])
 
   return (
-    <section id="skills" ref={sectionRef} className="py-28 px-12 bg-[#111111]">
+    <section id="skills" ref={sectionRef} className="py-20 md:py-28 px-6 md:px-12 bg-[#111111]">
       <div ref={labelRef} className="font-mono text-[0.72rem] tracking-[0.22em] uppercase text-[#e8734a] mb-5 flex items-center gap-3">
         <span className="inline-block w-5 h-px bg-[#e8734a]" />
         Capabilities
@@ -64,27 +64,27 @@ export default function Skills() {
 
       <div
         ref={titleRef}
-        className="font-extrabold uppercase tracking-tight mb-16"
-        style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 0.95 }}
+        className="font-extrabold uppercase tracking-tight mb-12 md:mb-16"
+        style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', lineHeight: 0.95 }}
       >
         SKILLS
       </div>
 
-      <div className="grid grid-cols-2 gap-12 max-md:grid-cols-1">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
         {SKILL_GROUPS.map(g => (
           <SkillGroup key={g.title} group={g} animate={animate} />
         ))}
 
         {/* Pills */}
-        <div className="col-span-2 mt-8 max-md:col-span-1">
-          <div className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-[#a09a90] mb-5">
+        <div className="md:col-span-2 mt-4 md:mt-8">
+          <div className="font-mono text-[0.7rem] md:text-[0.72rem] tracking-[0.18em] uppercase text-[#a09a90] mb-5">
             All Technologies
           </div>
           <div ref={pillsRef} className="flex flex-wrap gap-2">
             {SKILL_PILLS.map(pill => (
               <span
                 key={pill}
-                className="hoverable font-mono text-[0.75rem] tracking-[0.08em] px-4 py-2 border border-white/[0.14] text-[#a09a90] transition-all duration-200 hover:border-[#e8734a] hover:text-[#e8734a] hover:bg-[#e8734a]/[0.06]"
+                className="hoverable font-mono text-[0.65rem] md:text-[0.75rem] tracking-[0.08em] px-3 md:px-4 py-2 border border-white/[0.14] text-[#a09a90] transition-all duration-200 hover:border-[#e8734a] hover:text-[#e8734a] hover:bg-[#e8734a]/[0.06]"
               >
                 {pill}
               </span>
