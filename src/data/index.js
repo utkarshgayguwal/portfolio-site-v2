@@ -123,13 +123,13 @@ export const SKILL_PILLS = [
 export const TIMELINE = [
   {
     period: 'DEC 2024 — PRESENT',
-    title: 'Laravel Backend Developer',
+    title: 'PHP Laravel Developer',
     company: '12grids',
     desc: 'Full-time backend development on enterprise and government platforms. Key projects: Smile (US audit system), SBI Payments migration, BMC GovTech portals.',
   },
   {
     period: 'SEP — NOV 2024',
-    title: 'Laravel Backend Developer Intern',
+    title: 'Intern Laravel Developer',
     company: '12grids',
     desc: 'Started career at 12grids working on real production projects across banking, healthcare, and government domains from day one.',
   },
