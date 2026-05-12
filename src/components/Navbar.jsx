@@ -39,18 +39,20 @@ export default function Navbar() {
     <>
       <nav
         className={[
-          'fixed top-0 left-0 right-0 z-[100]',
+          'fixed top-0 left-0 right-0 z-[120]',
           'flex items-center justify-between px-6 md:px-12 py-5',
           'border-b transition-all duration-300',
-          scrolled || menuOpen
-            ? 'border-white/[0.08] bg-[#0a0a0a]/85 backdrop-blur-xl'
-            : 'border-transparent',
+          menuOpen
+            ? 'border-transparent bg-transparent'
+            : scrolled
+              ? 'border-white/[0.08] bg-[#0a0a0a]/85 backdrop-blur-xl'
+              : 'border-transparent',
         ].join(' ')}
       >
         {/* Logo */}
         <div
           ref={logoRef}
-          className="font-mono text-[0.75rem] md:text-[0.85rem] tracking-[0.08em] text-[#a09a90] opacity-0 z-[110]"
+          className="font-mono text-[0.75rem] md:text-[0.85rem] tracking-[0.08em] text-[#a09a90] opacity-0 z-[130]"
         >
           <span className="text-[#e8734a]">UG</span> <span className="hidden sm:inline">/ UTKARSH GAYGUWAL</span>
         </div>
@@ -72,19 +74,21 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           onClick={toggleMenu}
-          className="md:hidden relative z-[110] w-8 h-8 flex flex-col justify-center items-end gap-1.5 focus:outline-none"
+          className="md:hidden relative z-[130] w-8 h-8 flex flex-col justify-center items-end focus:outline-none"
           aria-label="Toggle Menu"
         >
-          <span className={`h-px bg-[#f0ece4] transition-all duration-300 ${menuOpen ? 'w-8 rotate-45 translate-y-2' : 'w-8'}`} />
-          <span className={`h-px bg-[#f0ece4] transition-all duration-300 ${menuOpen ? 'opacity-0' : 'w-5'}`} />
-          <span className={`h-px bg-[#f0ece4] transition-all duration-300 ${menuOpen ? 'w-8 -rotate-45 -translate-y-2' : 'w-8'}`} />
+          <div className="flex flex-col gap-[6px] items-end">
+            <span className={`h-[2px] bg-[#f0ece4] transition-all duration-300 origin-center ${menuOpen ? 'w-8 rotate-45 translate-y-[8px]' : 'w-8'}`} />
+            <span className={`h-[2px] bg-[#f0ece4] transition-all duration-300 ${menuOpen ? 'opacity-0' : 'w-5'}`} />
+            <span className={`h-[2px] bg-[#f0ece4] transition-all duration-300 origin-center ${menuOpen ? 'w-8 -rotate-45 -translate-y-[8px]' : 'w-8'}`} />
+          </div>
         </button>
       </nav>
 
       {/* Mobile Menu Overlay */}
       <div
         ref={menuRef}
-        className={`fixed inset-0 bg-[#0a0a0a] z-[105] transition-transform duration-500 ease-[cubic-bezier(0.85,0,0.15,1)] md:hidden ${
+        className={`fixed inset-0 bg-[#0a0a0a] z-[110] transition-transform duration-500 ease-[cubic-bezier(0.85,0,0.15,1)] md:hidden ${
           menuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
