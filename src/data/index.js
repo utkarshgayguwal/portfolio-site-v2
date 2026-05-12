@@ -52,36 +52,28 @@ export const PROJECTS = [
       { label: 'MySQL',   accent: false },
     ],
   },
-  // {
-  //   num: '04',
-  //   title: 'BMC — FaceBio, CSMVS Museum & Zoo',
-  //   meta: 'Government / Public Sector · 2025',
-  //   tags: [
-  //     { label: 'Laravel',    accent: true  },
-  //     { label: 'GovTech',    accent: false },
-  //     { label: 'Compliance', accent: false },
-  //   ],
-  // },
-  // {
-  //   num: '05',
-  //   title: 'Access Health — Healthcare Platform',
-  //   meta: 'US Healthcare · 2024',
-  //   tags: [
-  //     { label: 'Laravel',    accent: true  },
-  //     { label: 'REST API',   accent: false },
-  //     { label: 'PostgreSQL', accent: false },
-  //   ],
-  // },
-  // {
-  //   num: '06',
-  //   title: 'Made Easy Meals — Food Platform',
-  //   meta: 'US-based Platform · 2024',
-  //   tags: [
-  //     { label: 'Laravel',   accent: true  },
-  //     { label: 'Easebuzz',  accent: false },
-  //     { label: 'Webhooks',  accent: false },
-  //   ],
-  // },
+  {
+    num: '04',
+    title: 'Techcean — News & Media Platform',
+    meta: 'React / Vercel · 2026',
+    url: 'http://techcean-brown.vercel.app/',
+    tags: [
+      { label: 'React',    accent: true  },
+      { label: 'Vercel',   accent: false },
+      { label: 'Frontend', accent: false },
+    ],
+  },
+  {
+    num: '05',
+    title: 'Himanshu Photography',
+    meta: 'React / Photography · 2026',
+    url: 'https://himanshu-photography.vercel.app/',
+    tags: [
+      { label: 'React',     accent: true  },
+      { label: 'Vercel',      accent: false },
+      { label: 'Portfolio', accent: false },
+    ],
+  },
 ]
 
 export const SKILL_GROUPS = [
